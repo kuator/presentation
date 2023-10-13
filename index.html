@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/white.css">
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <p>Если вы ищете <span class="fragment fade-in">быстрый</span> и <span class="fragment fade-in">легкий</span> способ изучения японского языка <span class="fragment fade-in">,то вы попали по не адресу.</span></p>
+          <img src='child.jpeg' style='width: 500px;' />
+        </section>
+        <section>
+          <section>
+            <p>Учить японский это долго и сложно</p>
+            <video controls width="640" >
+              <source type="video/mp4" src="http://localhost:8000/girl.mp4">
+            </video>
+          </section>
+            <section>
+              <h7>Можно ли сделать этот тяжелый процесс интересным?</h7>
+              <!-- <h7>Одна из целей моей презентации заключается в том, чтобы понять можно ли сделать этот тяжелый процесс интересней?</h7> -->
+            </section>
+        </section>
+        <section>
+          <h4 style='margin-bottom: 40px;'>Are you all ready to get kawaii as f*ck?</h4>
+          <video controls>
+            <source type="video/mp4" src="http://localhost:8000/frank.mp4">
+          </video>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+        keyboard: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+
+      Reveal.configure({
+        keyboard: {
+          32: function(){ 
+              let currentSlide = Reveal.getCurrentSlide();
+              let currentVideo = currentSlide.getElementsByTagName("video")[0];
+              if (currentVideo) {
+                if (currentVideo.paused == true) currentVideo.play();
+                else currentVideo.pause();
+              }
+           }
+        }
+      }
+      );
+    </script>
+  </body>
+</html>
